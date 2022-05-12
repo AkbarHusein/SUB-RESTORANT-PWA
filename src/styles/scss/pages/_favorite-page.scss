@@ -1,0 +1,103 @@
+@import '../utils/responsive';
+
+#contentWrapper {
+  min-height: 100vh;
+  #favorite_restaurant {
+    padding: 20px 40px;
+    .section_title {
+      margin-bottom: 20px;
+    }
+    #favoriteRestaurant {
+      display: grid;
+      gap: 15px;
+      .favoriteItem {
+        .image_content {
+          position: relative;
+          .label-city {
+            text-align: center;
+            padding: 5px;
+            position: absolute;
+            top: 5%;
+            right: 0;
+            left: 0;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: rgba(6, 17, 60, 0.8);
+          }
+          .inner-text {
+            color: #fff;
+            padding: 20px;
+            position: absolute;
+            right: 0%;
+            left: 0%;
+            bottom: 5%;
+            background-color: rgba(0, 0, 0, 0.7);
+            .label-rating {
+              text-align: center;
+              display: inline-block;
+              font-size: 1.1em;
+              margin-bottom: 5px;
+            }
+            .label-name {
+              font-size: 2em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include medium() {
+  #contentWrapper {
+    min-height: 100vh;
+    #favorite_restaurant {
+      padding: 20px 40px;
+      .section_title {
+        margin-bottom: 20px;
+      }
+      #favoriteRestaurant {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+        .favoriteItem {
+          .image_content {
+            max-height: 250px;
+            overflow: hidden;
+            position: relative;
+            .label-city {
+              text-align: center;
+              padding: 5px;
+              position: absolute;
+              top: 5%;
+              right: 0;
+              left: 0;
+              font-size: 1.2em;
+              color: #fff;
+              background-color: rgba(6, 17, 60, 0.8);
+            }
+            img {
+              height: 200px;
+            }
+            .inner-text {
+              color: #fff;
+              padding: 20px;
+              position: absolute;
+              right: 0%;
+              left: 0%;
+              bottom: 2%;
+              background-color: rgba(0, 0, 0, 0.7);
+              .label-rating {
+                text-align: center;
+                display: inline-block;
+                font-size: 1.1em;
+                margin-bottom: 5px;
+              }
+              .label-name {
+                font-size: 2em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin brand {
+  display: inline-block;
+  font-size: 2em;
+  font-weight: bold;
+}
+@mixin nav-link {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px 0;
+}
+@mixin sidebar {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+@mixin show_sidebar {
+  opacity: 1;
+  transform: translateX(0);
+}

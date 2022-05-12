@@ -1,0 +1,179 @@
+@import '../utils/responsive';
+
+#contentWrapper {
+  min-height: 100vh;
+  #detail_restaurant {
+    padding: 20px;
+    .section_title {
+      margin-bottom: 20px;
+    }
+    #detailRestaurant {
+      .restaurant-item {
+        display: grid;
+        grid-template-areas:
+          'innerContent'
+          'information'
+          'reviews';
+        .inner_content {
+          grid-area: innerContent;
+          .image_content {
+            position: relative;
+            .label_city {
+              font-size: 1.3em;
+              text-align: right;
+              position: absolute;
+              padding: 10px 20px 10px 10px;
+              top: 3%;
+              right: 0%;
+              left: 0%;
+              color: #fff;
+              background-color: rgba(6, 17, 60, 0.8);
+              i {
+                margin-right: 5px;
+              }
+            }
+            .inner-text {
+              color: #fff;
+              position: absolute;
+              bottom: 3%;
+              left: 0%;
+              right: 0%;
+              padding: 20px;
+              background-color: rgba(0, 0, 0, 0.7);
+            }
+            .label-rating {
+              text-align: center;
+              display: inline-block;
+              font-size: 1.1em;
+              margin-bottom: 5px;
+            }
+            .label-name {
+              font-size: 1.4em;
+            }
+          }
+        }
+      }
+      .information {
+        grid-area: information;
+        background-color: #ddd;
+        overflow: hidden;
+        .inner_information {
+          display: grid;
+          padding: 20px;
+          .label-address {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+          }
+          .accordion-wrapper {
+            font-size: 1em;
+            margin-bottom: 5px;
+            margin-bottom: 10px;
+          }
+          .description {
+            overflow: auto;
+          }
+        }
+      }
+      .customer-reviews {
+        grid-area: reviews;
+        padding: 20px 0px;
+        .review-wrapper {
+          p {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            border-bottom: solid #000 2px;
+          }
+          .reviews {
+            .review {
+              padding: 5px;
+              margin-bottom: 0px 10px;
+              .reviewer-message {
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include medium() {
+  #contentWrapper {
+    #detail_restaurant {
+      padding: 20px 40px;
+      .section_title {
+        margin-bottom: 20px;
+      }
+      #detailRestaurant {
+        .restaurant-item {
+          grid-template-areas:
+            'innerContent information'
+            'reviews reviews';
+          overflow: auto;
+          & > * {
+            max-height: 350px;
+          }
+          .inner_content {
+            .image_content {
+              max-height: 350px;
+              overflow: hidden;
+              .label_city {
+                font-size: 1.3em;
+                i {
+                  margin-right: 5px;
+                }
+              }
+              .inner-text {
+                .label-rating {
+                  font-size: 1.2em;
+                }
+                .label-name {
+                  font-size: 1.5em;
+                }
+              }
+            }
+          }
+          .information {
+            background-color: transparent;
+            .inner_information {
+              padding: 0px 20px;
+              display: grid;
+              grid-template-rows: auto auto auto auto;
+              overflow: auto;
+              max-height: 350px;
+              .label-address {
+                margin-bottom: 10px;
+                font-size: 1.2em;
+                margin-bottom: 10px;
+              }
+              .accordion-wrapper {
+                font-size: 1em;
+                margin-bottom: 5px;
+                margin-bottom: 10px;
+              }
+              .description {
+                overflow: visible;
+              }
+            }
+          }
+          .customer-reviews {
+            overflow-y: auto;
+            .review-wrapper {
+              .reviews {
+                .review {
+                  .reviewer-message {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@import '../components/_drawer.scss';
+@import '../utils/_utilities.scss';
+@import '../utils/responsive';
+
+header {
+  position: relative;
+  padding: 15px 20px;
+  color: #fff;
+  background-color: rgb(6, 17, 60);
+  #skipToContent {
+    position: absolute;
+    top: 0%;
+    opacity: 0;
+    &:focus {
+      opacity: 1;
+    }
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand {
+    @include brand;
+  }
+  #hamburgerButton {
+    @include drawer;
+  }
+  #navbar {
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    .nav-list {
+      z-index: 9999;
+      transition: all ease-in-out 0.3s;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 50%;
+      padding: 0 20px;
+      @include sidebar; //*utils
+      background-color: rgb(6, 17, 60);
+      li a {
+        @include nav-link; //*utils
+      }
+    }
+  }
+
+  #navbar.showmenu {
+    .nav-list {
+      @include show_sidebar; //*utils
+    }
+  }
+}
+
+@include medium() {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .brand {
+      @include brand;
+    }
+    #hamburgerButton {
+      display: none;
+    }
+    #navbar {
+      justify-content: space-between;
+      align-items: center;
+      position: static;
+      .nav-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all ease-in-out 0.3s;
+        position: static;
+        padding: 0 20px;
+        opacity: 1;
+        transform: none;
+        li a {
+          white-space: nowrap;
+          @include nav-link;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

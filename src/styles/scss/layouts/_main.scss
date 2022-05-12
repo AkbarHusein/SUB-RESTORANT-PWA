@@ -1,0 +1,28 @@
+@import '../utils/responsive';
+
+main {
+  margin-top: 20px;
+  min-height: 100vh;
+  .container {
+    padding: 10px 20px;
+    text-align: center;
+    .section_title {
+      font-size: 1.2em;
+      display: inline-block;
+      border-bottom: 3px solid black;
+    }
+    #restaurant {
+      margin-top: 25px;
+    }
+  }
+}
+
+@include medium() {
+  main {
+    .container {
+      .section_title {
+        font-size: 1.3em;
+      }
+    }
+  }
+}

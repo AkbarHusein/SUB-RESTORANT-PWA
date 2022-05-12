@@ -1,0 +1,21 @@
+@import './base/reset';
+@import './base/typography';
+@import './components/drawer';
+@import './components/like-button';
+@import './layouts/header';
+@import './layouts/footer';
+@import './layouts/jumbotron';
+@import './layouts/main';
+@import './pages/detail-page';
+@import './pages/favorite-page';
+@import './utils/utilities';
+@import './utils/responsive';
+@import './components/card-resto-item';
+@import './components/accordion';
+
+@include medium() {
+  header {
+    background-color: #06113c;
+    color: #fff;
+  }
+}

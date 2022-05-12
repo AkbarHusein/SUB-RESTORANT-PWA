@@ -1,0 +1,19 @@
+@import '../utils/responsive';
+
+footer {
+  font-size: 1.1em;
+  text-align: center;
+  color: #ddd;
+  background-color: #000;
+  p,
+  a {
+    padding: 15px 0px;
+  }
+}
+
+@include medium {
+  footer {
+    font-size: 1.2em;
+    padding: 15px;
+  }
+}

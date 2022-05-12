@@ -1,0 +1,13 @@
+@mixin drawer {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  &:hover {
+    cursor: pointer;
+  }
+  & > .bx {
+    font-size: xx-large;
+  }
+}

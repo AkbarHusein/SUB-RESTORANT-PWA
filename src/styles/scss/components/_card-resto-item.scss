@@ -1,0 +1,72 @@
+@import '../utils/_responsive.scss';
+
+#explorer_restaurant {
+  padding: 20px;
+  #restaurant {
+    width: 100%;
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 15px;
+    .restaurant-item {
+      .image_content {
+        position: relative;
+        overflow: hidden;
+        & > *:not(:nth-child(2)) {
+          color: #ddd;
+          background-color: rgba(6, 17, 60, 0.8);
+          display: inline-block;
+          position: absolute;
+        }
+        .label_city {
+          font-size: 1.2em;
+          top: 5%;
+          left: 0%;
+          width: 100%;
+          padding: 5px;
+        }
+        img {
+          object-fit: cover;
+          object-position: 0%;
+        }
+        .label-rating {
+          font-size: 1.3em;
+          padding: 8px 13px;
+          border-radius: 5px 0 0 5px;
+          bottom: 10%;
+          right: 0%;
+        }
+      }
+      .information {
+        padding: 15px 0px;
+        text-align: start;
+        .label-name {
+          margin-bottom: 5px;
+          a {
+            font-size: 1.2em;
+            padding: 10px 0px;
+          }
+        }
+        .description {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+@include medium() {
+  #explorer_restaurant {
+    padding: 20px 40px;
+    #restaurant {
+      .restaurant-item {
+        .image_content {
+          height: 200px;
+        }
+      }
+    }
+  }
+}

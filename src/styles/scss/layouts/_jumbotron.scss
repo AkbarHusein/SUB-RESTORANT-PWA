@@ -1,0 +1,32 @@
+@import '../utils/responsive';
+
+.jumbotron {
+  overflow: hidden;
+  height: 250px;
+  position: relative;
+  .text-hero {
+    position: absolute;
+    font-family: 'Rum Raisin', sans-serif;
+    text-align: center;
+    color: #faf2da;
+    background-color: rgb(0, 0, 0, 0.5);
+    font-size: 1.8em;
+    top: 20%;
+    left: 0%;
+    right: 0%;
+    padding: 40px;
+  }
+}
+@include medium() {
+  .jumbotron {
+    height: 350px;
+    .text-hero {
+      top: 10%;
+      left: 5%;
+      right: 60%;
+      text-align: left;
+      font-size: 3em;
+      background-color: transparent;
+    }
+  }
+}

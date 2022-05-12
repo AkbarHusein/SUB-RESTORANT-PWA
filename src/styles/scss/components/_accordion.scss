@@ -1,0 +1,32 @@
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.information {
+  .accordion-wrapper {
+    .accordion-menu-makanan:hover,
+    .accordion-menu-makanan:focus,
+    .accordion-menu-minuman:hover,
+    .accordion-menu-minuman:focus {
+      .accordion {
+        background-color: #ccc;
+      }
+      .panel {
+        display: block;
+      }
+    }
+  }
+}
