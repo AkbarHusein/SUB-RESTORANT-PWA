@@ -4,9 +4,9 @@ import { createRestaurantFavotiresTemplate } from '../templates/template_creator
 const Like = {
   async render() {
     return `
-    <div id="mainConetent">
+    <div id="mainConetent"  aria-label="favorite restaurant" tabindex="0">
       <section id="favorite_restaurant">
-          <h2 class="section_title" aria-label="favorite restaurant" tabindex="0">
+          <h2 class="section_title">
               Favorite Restaurant
           </h2>
           <div id="favoriteRestaurant" class="favoriteRestaurant">

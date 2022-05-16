@@ -9,7 +9,7 @@ const CacheHelper = {
   async deleteOldCache() {
     const cacheNames = await caches.keys();
     cacheNames
-      .filter((name) => name !== CONFIG.BASE_URL)
+      .filter((name) => name !== CONFIG.CACHE_NAME)
       .map((filteredName) => caches.delete(filteredName));
   },
 
@@ -17,7 +17,6 @@ const CacheHelper = {
     const response = await caches.match(request);
 
     if (response) {
-      this._fetchRequest(request);
       return response;
     }
     return this._fetchRequest(request);

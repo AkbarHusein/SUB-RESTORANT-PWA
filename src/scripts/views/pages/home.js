@@ -10,10 +10,10 @@ const Home = {
           <p>Find Your Favorite Restaurant!</p>
         </div>
     </div>
-    <main id="mainContent">
+    <main id="mainContent"  aria-label="explorer restaurant" tabindex="0">
       <section id="explorer_restaurant" >
         <div class="container">
-          <h2 class="section_title" aria-label="explorer restaurant" tabindex="0">
+          <h2 class="section_title">
               Explorer Restaurant
           </h2>
           <div id="restaurant" class="restaurant"></div>

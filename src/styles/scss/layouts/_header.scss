@@ -49,6 +49,7 @@ header {
   #navbar.showmenu {
     .nav-list {
       @include show_sidebar; //*utils
+      margin-left: -20px;
     }
   }
 }
