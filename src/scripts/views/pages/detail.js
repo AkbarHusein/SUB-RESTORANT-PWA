@@ -1,6 +1,7 @@
 import RestaurantApi from '../../data/sourceAPI';
 import UrlParser from '../../routes/url_parser';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import Toast from '../../utils/notification';
 import { createRestaurantDetailTemplate } from '../templates/template_creator';
 
 const Detail = {
@@ -13,6 +14,12 @@ const Detail = {
           </h2> 
           <div id="detailRestaurant" class="detailRestaurant">
 
+            <div class="loader lds-facebook">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
           </div>
       </section>
       <div id="likeButtonContainer"></div>
@@ -21,20 +28,29 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const resto = await RestaurantApi.detailResto(url.id);
     const restaurantContainer = document.querySelector('#detailRestaurant');
-    restaurantContainer.innerHTML = createRestaurantDetailTemplate(resto);
 
-    LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      resto: {
-        id: resto.id,
-        name: resto.name,
-        image: resto.pictureId,
-        city: resto.city,
-        rating: resto.rating,
-      },
-    });
+    try {
+      const resto = await RestaurantApi.detailResto(url.id);
+      restaurantContainer.innerHTML = createRestaurantDetailTemplate(resto);
+
+      LikeButtonInitiator.init({
+        likeButtonContainer: document.querySelector('#likeButtonContainer'),
+        resto: {
+          id: resto.id,
+          name: resto.name,
+          image: resto.pictureId,
+          city: resto.city,
+          rating: resto.rating,
+        },
+      });
+    } catch (error) {
+      Toast.fire({
+        icon: 'warning',
+        title:
+          'Anda sedang offline, beberapa content mungkin tidak akan tampil.',
+      });
+    }
   },
 };
 

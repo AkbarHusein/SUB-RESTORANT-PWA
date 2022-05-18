@@ -1,4 +1,5 @@
 import RestaurantApi from '../../data/sourceAPI';
+import Toast from '../../utils/notification';
 import { createRestaurantItemTemplate } from '../templates/template_creator';
 
 const Home = {
@@ -16,7 +17,14 @@ const Home = {
           <h2 class="section_title">
               Explorer Restaurant
           </h2>
-          <div id="restaurant" class="restaurant"></div>
+
+            <div class="loader lds-facebook">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            
+            <div id="restaurant" class="restaurant"></div>
         </div>
       </section>
     </main>
@@ -24,12 +32,21 @@ const Home = {
   },
 
   async afterRender() {
-    const resto = await RestaurantApi.home();
     const restaurantContainer = document.querySelector('#restaurant');
 
-    resto.forEach((restoItem) => {
-      restaurantContainer.innerHTML += createRestaurantItemTemplate(restoItem);
-    });
+    try {
+      const resto = await RestaurantApi.home();
+      resto.forEach((restoItem) => {
+        restaurantContainer.innerHTML +=
+          createRestaurantItemTemplate(restoItem);
+      });
+    } catch (error) {
+      Toast.fire({
+        icon: 'warning',
+        title:
+          'Anda sedang offline, beberapa konten mungkin tidak akan tampil.',
+      });
+    }
   },
 };
 

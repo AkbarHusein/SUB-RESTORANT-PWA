@@ -109,6 +109,10 @@ const createRestaurantFavotiresTemplate = (resto) => `
         </div>
     </div>`;
 
+const createEmptyDataTemplate = () =>
+  `<img src="images/Waiters-pana.png" class="empty-image" alt="Belum ada restaurant favorite" aria-label="Belum ada restaurant favorite" tabindex="0">
+    <h3>Kamu belum mempunyai restaurant favorite</h3>`;
+
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -125,6 +129,7 @@ export {
   createRestaurantDetailTemplate,
   createRestaurantItemTemplate,
   createLikeButtonTemplate,
+  createEmptyDataTemplate,
   createLikedButtonTemplate,
   createRestaurantFavotiresTemplate,
 };

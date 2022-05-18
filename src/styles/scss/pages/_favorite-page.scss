@@ -3,13 +3,25 @@
 #contentWrapper {
   min-height: 100vh;
   #favorite_restaurant {
-    padding: 20px 40px;
+    padding: 20px;
     .section_title {
       margin-bottom: 20px;
     }
     #favoriteRestaurant {
       display: grid;
       gap: 15px;
+
+      &.empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h3 {
+          text-align: center;
+          font-size: 0.9em;
+          display: inline-block;
+        }
+      }
       .favoriteItem {
         .image_content {
           position: relative;
@@ -52,12 +64,17 @@
   #contentWrapper {
     min-height: 100vh;
     #favorite_restaurant {
-      padding: 20px 40px;
       .section_title {
         margin-bottom: 20px;
       }
       #favoriteRestaurant {
         grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+
+        &.empty {
+          img {
+            width: 30%;
+          }
+        }
         .favoriteItem {
           .image_content {
             max-height: 250px;

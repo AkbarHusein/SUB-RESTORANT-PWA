@@ -11,6 +11,7 @@
 @import './utils/utilities';
 @import './utils/responsive';
 @import './components/card-resto-item';
+@import './utils/loadingAnimation';
 @import './components/accordion';
 
 @include medium() {

@@ -7,6 +7,16 @@ header {
   padding: 15px 20px;
   color: #fff;
   background-color: rgb(6, 17, 60);
+  .notification-wrapper {
+    position: fixed;
+    top: 0%;
+    border-radius: 8px;
+    background-color: salmon;
+    p {
+      text-align: center;
+      padding: 5px;
+    }
+  }
   #skipToContent {
     position: absolute;
     top: 0%;
