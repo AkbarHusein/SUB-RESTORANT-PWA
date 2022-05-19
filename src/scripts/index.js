@@ -2,7 +2,7 @@ import 'regenerator-runtime';
 import '../styles/scss/main.scss';
 import './globals/config';
 import './views/templates/template_creator';
-
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 

@@ -19,6 +19,7 @@
     "no-console": 0,
     "quotes": 0,
     "implicit-arrow-linebreak": 0,
-    "no-undef": 0
+    "no-undef": 0,
+    "no-plusplus": 0
   }
 }

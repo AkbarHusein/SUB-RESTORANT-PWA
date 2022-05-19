@@ -11,6 +11,10 @@
       display: grid;
       gap: 15px;
 
+      picture {
+        display: contents;
+      }
+
       &.empty {
         display: flex;
         justify-content: center;

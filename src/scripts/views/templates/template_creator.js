@@ -69,9 +69,9 @@ const createRestaurantItemTemplate = (resto) => `
             <div class="label_city" >
                 <p >${resto.city}</p>
             </div>
-            <img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${
+            <img data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${
   resto.name
-}" class="image">
+}" class="lazyload image">
             <div class="label-rating">
                 <span>⭐️</span>${resto.rating}
             </div>
@@ -110,7 +110,10 @@ const createRestaurantFavotiresTemplate = (resto) => `
     </div>`;
 
 const createEmptyDataTemplate = () =>
-  `<img src="images/Waiters-pana.png" class="empty-image" alt="Belum ada restaurant favorite" aria-label="Belum ada restaurant favorite" tabindex="0">
+  `<picture>
+    <source media="(max-width: 720px)" srcset="./images/Waiters-pana-small.png">
+    <img src="./images/Waiters-pana-large.png" class="empty-image" alt="Belum ada restaurant favorite" aria-label="Belum ada restaurant favorite" tabindex="0">
+  </picture>
     <h3>Kamu belum mempunyai restaurant favorite</h3>`;
 
 const createLikeButtonTemplate = () => `

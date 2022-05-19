@@ -6,7 +6,10 @@ const Home = {
   async render() {
     return `
     <div class="jumbotron">
-      <img src="images/hero-image_2.jpg" alt="Hero Image" class="hero-image">
+      <picture>
+        <source media="(max-width: 720px)" srcset="./images/hero-image-small.jpg" sizes="">
+        <img src="./images/hero-image-large.jpg" alt="Hero Image" class="hero-image">
+      </picture>
         <div class="text-hero">
           <p>Find Your Favorite Restaurant!</p>
         </div>
