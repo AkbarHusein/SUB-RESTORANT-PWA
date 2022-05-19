@@ -111,10 +111,10 @@ const createRestaurantFavotiresTemplate = (resto) => `
 
 const createEmptyDataTemplate = () =>
   `<picture>
-    <source media="(max-width: 720px)" srcset="./images/Waiters-pana-small.png">
-    <img src="./images/Waiters-pana-large.png" class="empty-image" alt="Belum ada restaurant favorite" aria-label="Belum ada restaurant favorite" tabindex="0">
-  </picture>
-    <h3>Kamu belum mempunyai restaurant favorite</h3>`;
+        <source media="(max-width: 720px)" srcset="./images/Waiters-pana-small.png">
+        <img src="./images/Waiters-pana-large.png" class="empty-image" alt="Belum ada restaurant favorite" aria-label="Belum ada restaurant favorite" tabindex="0">
+    </picture>
+    <h3 class="fav-resto-not-found">Kamu belum mempunyai restaurant favorite</h3>`;
 
 const createLikeButtonTemplate = () => `
   <button aria-label="favorite this restaurant" id="likeButton" class="like">
