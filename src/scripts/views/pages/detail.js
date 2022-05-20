@@ -8,19 +8,17 @@ import { createRestaurantDetailTemplate } from '../templates/template_creator';
 const Detail = {
   async render() {
     return `
-    <div id="mainContent">
-      <section id="detail_restaurant" aria-label="detail restaurant" tabindex="0">
+    <div id="mainContent" aria-label="detail restaurant" tabindex="0">
+      <section id="detail_restaurant">
           <h2 class="section_title">
               Detail Restaurant
           </h2> 
           <div id="detailRestaurant" class="detailRestaurant">
-
             <div class="loader lds-facebook">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-
           </div>
       </section>
       <div id="likeButtonContainer"></div>

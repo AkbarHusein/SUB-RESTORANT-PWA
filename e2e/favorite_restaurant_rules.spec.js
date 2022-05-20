@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-Feature('Favoriting Restaurant');
+Feature('Favoriting and Unfavoriting Restaurant');
 
 Before(({ I }) => {
   I.amOnPage('/#/favorite');
@@ -23,7 +23,7 @@ Scenario('favoriting one restaurant', async ({ I }) => {
   const firstRestoName = await I.grabTextFrom(firstResto);
   I.click(firstResto);
 
-  I.waitForElement('#likeButton');
+  I.waitForElement('#likeButton', 5);
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
@@ -32,4 +32,24 @@ Scenario('favoriting one restaurant', async ({ I }) => {
   const favoriteRestoName = await I.grabTextFrom('.label-name');
 
   assert.strictEqual(firstRestoName, favoriteRestoName);
+
+  // *Unfavoriting restaurant
+  I.seeElement('.favoriteItem');
+  I.seeElement('.label-name a');
+
+  I.waitForElement('.label-name a', 5);
+  I.seeElement('.label-name a');
+
+  I.click(locate('.label-name a').first());
+
+  I.waitForElement('.restaurant-item', 5);
+  I.seeElement('.restaurant-item');
+
+  I.waitForElement('#likeButton', 5);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+  I.seeElement('#favoriteRestaurant');
+  I.see('Kamu belum mempunyai restaurant favorite', '.fav-resto-not-found');
 });
